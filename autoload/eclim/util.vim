@@ -555,7 +555,7 @@ function! eclim#util#GoToBufferWindowOrOpen(name, cmd, ...) " {{{
   "   line: the line number to jump to in the file
   "   column: the column number to jump to in the file
 
-  let name = eclim#util#EscapeBufferName(a:name)
+  let name = resolve(eclim#util#EscapeBufferName(a:name))
   let line = a:0 ? a:1 : 0
   let col = a:0 ? a:2 : 0
   let winnr = bufwinnr(bufnr('^' . name . '$'))
