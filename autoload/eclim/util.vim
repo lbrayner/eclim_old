@@ -577,7 +577,7 @@ function! eclim#util#GoToBufferWindowOrOpen(name, cmd, ...) " {{{
      \ !&modified && line('$') == 1 && getline(1) == ''
       let cmd = 'edit'
     endif
-    exec cmd . ' ' . escape(eclim#util#Simplify(a:name), ' ')
+    exec cmd . ' ' . escape(eclim#util#Simplify(resolve(a:name)), ' ')
   endif
   call cursor(line, col)
 endfunction " }}}
